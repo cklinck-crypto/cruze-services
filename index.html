@@ -4,56 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cruze Services</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #333; color: #ffffff; padding: 10px 20px; text-align: center; }
-        h1 { margin: 0; }
-        .pricing { display: flex; justify-content: center; margin: 20px; }
-        .tier { border: 1px solid #ccc; padding: 20px; margin: 0 10px; width: 200px; }
-        .contact-form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
-        input, textarea { width: 100%; margin: 10px 0; padding: 10px; }
-        button { padding: 10px; background: #28a745; color: white; border: none; }
+        body { font-family: Arial, sans-serif; }
+        .contact-info { margin: 20px; }
+        .pricing { display: flex; justify-content: space-around; }
+        .service { border: 1px solid #ccc; padding: 20px; border-radius: 5px; }
+        .venmo-link { color: #00BFFF; }
     </style>
 </head>
 <body>
-<header>
-    <h1>Cruze Services</h1>
-    <p>Lawn Mowing & Snow Shoveling Services</p>
-</header>
+    <header>
+        <h1>Welcome to Cruze Services</h1>
+        <p>Use Venmo for payments: <a class="venmo-link" href="https://venmo.com/Cruze-Klinck">@Cruze-Klinck</a></p>
+    </header>
 
-<section class="pricing">
-    <div class="tier">
-        <h2>Bronze Tier</h2>
-        <p>Basic lawn mowing or snow shoveling</p>
-        <p>Price: $30</p>
-        <a href="https://venmo.com/?txn=pay&recipients=yourvenmousername&amount=30">Pay via Venmo</a>
-    </div>
-    <div class="tier">
-        <h2>Silver Tier</h2>
-        <p>Extended mowing or shoveling with additional services</p>
-        <p>Price: $50</p>
-        <a href="https://venmo.com/?txn=pay&recipients=yourvenmousername&amount=50">Pay via Venmo</a>
-    </div>
-    <div class="tier">
-        <h2>Gold Tier</h2>
-        <p>All-inclusive service with premium features</p>
-        <p>Price: $70</p>
-        <a href="https://venmo.com/?txn=pay&recipients=yourvenmousername&amount=70">Pay via Venmo</a>
-    </div>
-</section>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="pricing">
+            <div class="service">
+                <h3>Lawn Mowing</h3>
+                <p>Pricing Tiers:</p>
+                <ul>
+                    <li>Standard (up to 1,000 sqft): $30</li>
+                    <li>Large (up to 2,500 sqft): $50</li>
+                    <li>Extra Large (over 2,500 sqft): $70</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Snow Shoveling</h3>
+                <p>Pricing Tiers:</p>
+                <ul>
+                    <li>Driveway (up to 2 cars): $40</li>
+                    <li>Walkway: $20</li>
+                    <li>Full Property: $80</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section class="contact-form">
-    <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2026 Cruze Services</p>
-</footer>
+    <footer class="contact-info">
+        <h2>Contact Us</h2>
+        <p>Email: cruzeklinck@gmail.com</p>
+        <p>Phone: 908-361-5106</p>
+    </footer>
 </body>
 </html>
