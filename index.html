@@ -91,11 +91,49 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         .service-card h2 {
-            color: #2ecc71;
             margin-bottom: 20px;
             font-size: 2em;
-            border-bottom: 3px solid #2ecc71;
+            border-bottom: 3px solid;
             padding-bottom: 10px;
+        }
+        .bronze-card {
+            border-top: 5px solid #d4a574;
+        }
+        .bronze-card h2 {
+            color: #8b6f47;
+            border-color: #d4a574;
+        }
+        .bronze-card .tier-name {
+            color: #8b6f47;
+        }
+        .bronze-card .tier-price {
+            color: #8b6f47;
+        }
+        .silver-card {
+            border-top: 5px solid #c0c0c0;
+        }
+        .silver-card h2 {
+            color: #696969;
+            border-color: #c0c0c0;
+        }
+        .silver-card .tier-name {
+            color: #696969;
+        }
+        .silver-card .tier-price {
+            color: #696969;
+        }
+        .gold-card {
+            border-top: 5px solid #ffd700;
+        }
+        .gold-card h2 {
+            color: #b8860b;
+            border-color: #ffd700;
+        }
+        .gold-card .tier-name {
+            color: #b8860b;
+        }
+        .gold-card .tier-price {
+            color: #b8860b;
         }
         .mowing-section {
             background: linear-gradient(rgba(46, 204, 113, 0.7), rgba(46, 204, 113, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grass" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M10,50 Q15,30 20,50 T30,50 M40,50 Q45,35 50,50 T60,50 M70,50 Q75,25 80,50 T90,50" stroke="%23196f3d" stroke-width="2" fill="none"/></pattern></defs><rect width="1200" height="600" fill="%2327ae60"/><rect width="1200" height="600" fill="url(%23grass)"/></svg>');
@@ -122,21 +160,34 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
+        .service-card-white h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid;
+            padding-bottom: 10px;
+        }
         .tier {
             background: #f8f9fa;
             padding: 15px;
             margin: 15px 0;
-            border-left: 5px solid #2ecc71;
+            border-left: 5px solid;
             border-radius: 5px;
+        }
+        .bronze-tier {
+            border-color: #d4a574;
+        }
+        .silver-tier {
+            border-color: #c0c0c0;
+        }
+        .gold-tier {
+            border-color: #ffd700;
         }
         .tier-name {
             font-weight: bold;
-            color: #2ecc71;
             font-size: 1.2em;
         }
         .tier-price {
             font-size: 1.8em;
-            color: #27ae60;
             margin-top: 8px;
         }
         .contact-section {
@@ -193,6 +244,44 @@
         .about-card p {
             margin-bottom: 15px;
         }
+        .profile-pic {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto 30px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #2ecc71;
+        }
+        .profile-container {
+            text-align: center;
+        }
+        .age-badge {
+            background: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .achievement {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #b8860b;
+        }
+        .achievement h3 {
+            color: #b8860b;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .achievement p {
+            color: #333;
+            font-weight: bold;
+        }
         footer {
             color: white;
             text-align: center;
@@ -235,18 +324,18 @@
             <h2 class="section-title">Lawn Mowing Pricing</h2>
             <div class="mowing-section">
                 <div class="services-grid" style="margin: 20px;">
-                    <div class="service-card-white" onclick="scrollToContact()">
+                    <div class="service-card-white bronze-card" onclick="scrollToContact()">
                         <h2>Bronze Tier</h2>
-                        <div class="tier">
+                        <div class="tier bronze-tier">
                             <div class="tier-name">1 Mow Per Month</div>
                             <div class="tier-price">$50</div>
                         </div>
                         <p>Perfect for basic lawn maintenance</p>
                         <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
                     </div>
-                    <div class="service-card-white" onclick="scrollToContact()">
+                    <div class="service-card-white silver-card" onclick="scrollToContact()">
                         <h2>Silver Tier</h2>
-                        <div class="tier">
+                        <div class="tier silver-tier">
                             <div class="tier-name">2 Mows Per Month</div>
                             <div class="tier-price">$90/month</div>
                         </div>
@@ -256,9 +345,9 @@
                 </div>
 
                 <div class="services-grid" style="margin: 20px;">
-                    <div class="service-card-white" onclick="scrollToContact()">
+                    <div class="service-card-white gold-card" onclick="scrollToContact()">
                         <h2>Gold Tier</h2>
-                        <div class="tier">
+                        <div class="tier gold-tier">
                             <div class="tier-name">Premium Service</div>
                             <div class="tier-price">$320 Total</div>
                             <p style="margin-top: 10px; color: #666;">May, June, July, August<br>2 mows per month</p>
@@ -272,20 +361,20 @@
             <h2 class="section-title">Snow Shoveling Pricing</h2>
             <div class="shoveling-section">
                 <div class="services-grid" style="margin: 20px;">
-                    <div class="service-card-white" onclick="scrollToContact()">
-                        <h2>One-Time Service</h2>
-                        <div class="tier">
-                            <div class="tier-name">Single Snow Removal</div>
-                            <div class="tier-price">$80</div>
+                    <div class="service-card-white" onclick="scrollToContact()" style="border-top: 5px solid #87ceeb;">
+                        <h2 style="color: #1e90ff; border-color: #87ceeb;">One-Time Service</h2>
+                        <div class="tier" style="border-color: #87ceeb;">
+                            <div class="tier-name" style="color: #1e90ff;">Single Snow Removal</div>
+                            <div class="tier-price" style="color: #1e90ff;">$80</div>
                         </div>
                         <p>Perfect for unexpected snow storms</p>
                         <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
                     </div>
-                    <div class="service-card-white" onclick="scrollToContact()">
-                        <h2>Season Pass</h2>
-                        <div class="tier">
-                            <div class="tier-name">Unlimited Snow Removal</div>
-                            <div class="tier-price">$150/season</div>
+                    <div class="service-card-white" onclick="scrollToContact()" style="border-top: 5px solid #4169e1;">
+                        <h2 style="color: #00008b; border-color: #4169e1;">Season Pass</h2>
+                        <div class="tier" style="border-color: #4169e1;">
+                            <div class="tier-name" style="color: #00008b;">Unlimited Snow Removal</div>
+                            <div class="tier-price" style="color: #00008b;">$150/season</div>
                         </div>
                         <p>All-season protection, unlimited services</p>
                         <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
@@ -298,16 +387,26 @@
         <div id="about" class="section">
             <h2 class="section-title">About Me</h2>
             <div class="about-card">
+                <div class="profile-container">
+                    <img src="https://image2url.com/r2/default/images/1774748003497-14235b49-61b6-47dd-836a-950696c72987.jpeg" alt="Profile Photo" class="profile-pic">
+                    <div class="age-badge">16 Years Old</div>
+                </div>
+                
                 <h2>Hi, I'm Cruze!</h2>
-                <p>I've been providing professional lawn mowing and snow shoveling services for over 4 years. What started as a way to earn money has turned into a passion for helping my community maintain beautiful properties year-round.</p>
+                <p>I'm a 16-year-old entrepreneur providing professional lawn mowing and snow shoveling services. I've been doing this for over 4 years, and what started as a way to earn money has turned into a passion for helping my community maintain beautiful properties year-round.</p>
                 
                 <p><strong>My Experience:</strong></p>
                 <p>This past winter, I successfully served 7 clients with snow shoveling services, ensuring their driveways and walkways were safe and clear throughout the season. During the summer months, I managed lawn care for 4+ residential clients, keeping their yards in pristine condition.</p>
                 
-                <p><strong>My Goals:</strong></p>
-                <p>Currently, I'm studying Information Technology at Academy, where I'm building skills for my future career. I'm using the income from Cruze Services to help save for college and invest in my education. My goal is to combine my work ethic and customer service experience with my passion for technology to make a real impact.</p>
+                <div class="achievement">
+                    <h3>🏆 Academic Achievement</h3>
+                    <p>Placed 4th in the State at the FBLA Business Convention - showcasing my dedication to entrepreneurship and business excellence</p>
+                </div>
                 
-                <p>Thank you for supporting a local, hardworking service provider!</p>
+                <p><strong>My Goals:</strong></p>
+                <p>Currently, I'm studying Information Technology at Academy, where I'm building skills for my future career. I'm using the income from Cruze Services to help save for college and invest in my education. My goal is to combine my work ethic and customer service experience with my passion for technology to make a real impact in the world.</p>
+                
+                <p>Thank you for supporting a local, hardworking high school student!</p>
             </div>
         </div>
 
