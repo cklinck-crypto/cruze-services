@@ -36,6 +36,36 @@
         header p {
             font-size: 1.3em;
         }
+        .location {
+            font-size: 1.1em;
+            margin-top: 15px;
+            color: #ecf0f1;
+        }
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #2ecc71;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
         .section-title {
             color: white;
             font-size: 2.5em;
@@ -54,6 +84,7 @@
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         .service-card:hover {
             transform: translateY(-10px);
@@ -65,6 +96,31 @@
             font-size: 2em;
             border-bottom: 3px solid #2ecc71;
             padding-bottom: 10px;
+        }
+        .mowing-section {
+            background: linear-gradient(rgba(46, 204, 113, 0.7), rgba(46, 204, 113, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grass" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M10,50 Q15,30 20,50 T30,50 M40,50 Q45,35 50,50 T60,50 M70,50 Q75,25 80,50 T90,50" stroke="%23196f3d" stroke-width="2" fill="none"/></pattern></defs><rect width="1200" height="600" fill="%2327ae60"/><rect width="1200" height="600" fill="url(%23grass)"/></svg>');
+            background-size: cover;
+            padding: 40px 0;
+            border-radius: 10px;
+        }
+        .shoveling-section {
+            background: linear-gradient(rgba(52, 152, 219, 0.7), rgba(52, 152, 219, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="snow" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="3" fill="%23fff"/><circle cx="10" cy="10" r="2" fill="%23f0f8ff"/><circle cx="40" cy="35" r="2" fill="%23f0f8ff"/></pattern></defs><rect width="1200" height="600" fill="%234a90e2"/><rect width="1200" height="600" fill="url(%23snow)"/></svg>');
+            background-size: cover;
+            padding: 40px 0;
+            border-radius: 10px;
+        }
+        .service-card-white {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .service-card-white:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         .tier {
             background: #f8f9fa;
@@ -121,6 +177,22 @@
         .venmo-btn:hover {
             background: #2d7ab8;
         }
+        .about-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .about-card h2 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .about-card p {
+            margin-bottom: 15px;
+        }
         footer {
             color: white;
             text-align: center;
@@ -137,6 +209,10 @@
             .section-title {
                 font-size: 1.8em;
             }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -145,73 +221,115 @@
         <header>
             <h1>🏡 Cruze Services</h1>
             <p>Professional Lawn Mowing & Snow Shoveling</p>
+            <div class="location">📍 Based in Berkeley Heights, NJ | Serving Most of Union County</div>
         </header>
 
-        <h2 class="section-title">Lawn Mowing Pricing</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h2>Bronze Tier</h2>
-                <div class="tier">
-                    <div class="tier-name">1 Mow Per Month</div>
-                    <div class="tier-price">$50</div>
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About Me</a>
+            <a href="#" onclick="showSection('contact')">Book Now</a>
+        </nav>
+
+        <!-- HOME SECTION -->
+        <div id="home" class="section active">
+            <h2 class="section-title">Lawn Mowing Pricing</h2>
+            <div class="mowing-section">
+                <div class="services-grid" style="margin: 20px;">
+                    <div class="service-card-white" onclick="scrollToContact()">
+                        <h2>Bronze Tier</h2>
+                        <div class="tier">
+                            <div class="tier-name">1 Mow Per Month</div>
+                            <div class="tier-price">$50</div>
+                        </div>
+                        <p>Perfect for basic lawn maintenance</p>
+                        <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
+                    </div>
+                    <div class="service-card-white" onclick="scrollToContact()">
+                        <h2>Silver Tier</h2>
+                        <div class="tier">
+                            <div class="tier-name">2 Mows Per Month</div>
+                            <div class="tier-price">$90/month</div>
+                        </div>
+                        <p>Keep your lawn looking fresh year-round</p>
+                        <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
+                    </div>
                 </div>
-                <p>Perfect for basic lawn maintenance</p>
+
+                <div class="services-grid" style="margin: 20px;">
+                    <div class="service-card-white" onclick="scrollToContact()">
+                        <h2>Gold Tier</h2>
+                        <div class="tier">
+                            <div class="tier-name">Premium Service</div>
+                            <div class="tier-price">$320 Total</div>
+                            <p style="margin-top: 10px; color: #666;">May, June, July, August<br>2 mows per month</p>
+                        </div>
+                        <p>Our best value for summer months</p>
+                        <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <h2>Silver Tier</h2>
-                <div class="tier">
-                    <div class="tier-name">2 Mows Per Month</div>
-                    <div class="tier-price">$90/month</div>
+
+            <h2 class="section-title">Snow Shoveling Pricing</h2>
+            <div class="shoveling-section">
+                <div class="services-grid" style="margin: 20px;">
+                    <div class="service-card-white" onclick="scrollToContact()">
+                        <h2>One-Time Service</h2>
+                        <div class="tier">
+                            <div class="tier-name">Single Snow Removal</div>
+                            <div class="tier-price">$80</div>
+                        </div>
+                        <p>Perfect for unexpected snow storms</p>
+                        <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
+                    </div>
+                    <div class="service-card-white" onclick="scrollToContact()">
+                        <h2>Season Pass</h2>
+                        <div class="tier">
+                            <div class="tier-name">Unlimited Snow Removal</div>
+                            <div class="tier-price">$150/season</div>
+                        </div>
+                        <p>All-season protection, unlimited services</p>
+                        <p style="color: #3498db; margin-top: 10px; font-weight: bold;">Click to Book →</p>
+                    </div>
                 </div>
-                <p>Keep your lawn looking fresh year-round</p>
             </div>
         </div>
 
-        <div class="services-grid" style="margin-bottom: 40px;">
-            <div class="service-card">
-                <h2>Gold Tier</h2>
-                <div class="tier">
-                    <div class="tier-name">Premium Service</div>
-                    <div class="tier-price">$320 Total</div>
-                    <p style="margin-top: 10px; color: #666;">May, June, July, August<br>2 mows per month</p>
-                </div>
-                <p>Our best value for summer months</p>
+        <!-- ABOUT SECTION -->
+        <div id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <h2>Hi, I'm Cruze!</h2>
+                <p>I've been providing professional lawn mowing and snow shoveling services for over 4 years. What started as a way to earn money has turned into a passion for helping my community maintain beautiful properties year-round.</p>
+                
+                <p><strong>My Experience:</strong></p>
+                <p>This past winter, I successfully served 7 clients with snow shoveling services, ensuring their driveways and walkways were safe and clear throughout the season. During the summer months, I managed lawn care for 4+ residential clients, keeping their yards in pristine condition.</p>
+                
+                <p><strong>My Goals:</strong></p>
+                <p>Currently, I'm studying Information Technology at Academy, where I'm building skills for my future career. I'm using the income from Cruze Services to help save for college and invest in my education. My goal is to combine my work ethic and customer service experience with my passion for technology to make a real impact.</p>
+                
+                <p>Thank you for supporting a local, hardworking service provider!</p>
             </div>
         </div>
 
-        <h2 class="section-title">Snow Shoveling Pricing</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h2>One-Time Service</h2>
-                <div class="tier">
-                    <div class="tier-name">Single Snow Removal</div>
-                    <div class="tier-price">$80</div>
+        <!-- CONTACT SECTION -->
+        <div id="contact" class="section">
+            <h2 class="section-title">📞 Book Your Service</h2>
+            <div class="contact-section">
+                <h2>Get in Touch</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">Ready to book? Reach out via email, call, or Venmo to schedule your service!</p>
+                
+                <div class="contact-item">
+                    <strong>Email:</strong> <a href="mailto:cruzeklinck@gmail.com">cruzeklinck@gmail.com</a>
                 </div>
-                <p>Perfect for unexpected snow storms</p>
-            </div>
-            <div class="service-card">
-                <h2>Season Pass</h2>
-                <div class="tier">
-                    <div class="tier-name">Unlimited Snow Removal</div>
-                    <div class="tier-price">$150/season</div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> <a href="tel:908-361-5106">908-361-5106</a>
                 </div>
-                <p>All-season protection, unlimited services</p>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h2>📞 Contact Us</h2>
-            <div class="contact-item">
-                <strong>Email:</strong> <a href="mailto:cruzeklinck@gmail.com">cruzeklinck@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>Phone:</strong> <a href="tel:908-361-5106">908-361-5106</a>
-            </div>
-            <div class="contact-item">
-                <strong>Pay with Venmo:</strong>
-                <br>
-                <a href="https://venmo.com/Cruze-Klinck" class="venmo-btn">Send Payment to @Cruze-Klinck</a>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Include your address and service description in the Venmo memo</p>
+                <div class="contact-item">
+                    <strong>Pay with Venmo:</strong>
+                    <br>
+                    <a href="https://venmo.com/Cruze-Klinck" class="venmo-btn">Send Payment to @Cruze-Klinck</a>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Include your address and service description in the Venmo memo</p>
+                </div>
             </div>
         </div>
 
@@ -219,5 +337,23 @@
             <p>&copy; 2026 Cruze Services. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToContact() {
+            showSection('contact');
+        }
+    </script>
 </body>
 </html>
