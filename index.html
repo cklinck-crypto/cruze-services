@@ -4,49 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cruze Services</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .contact-info { margin: 20px; }
-        .pricing { display: flex; justify-content: space-around; }
-        .service { border: 1px solid #ccc; padding: 20px; border-radius: 5px; }
-        .venmo-link { color: #00BFFF; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.3em;
+        }
+        .section-title {
+            color: white;
+            font-size: 2.5em;
+            margin: 40px 0 30px 0;
+            text-align: center;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        .service-card h2 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #2ecc71;
+            padding-bottom: 10px;
+        }
+        .tier {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #2ecc71;
+            border-radius: 5px;
+        }
+        .tier-name {
+            font-weight: bold;
+            color: #2ecc71;
+            font-size: 1.2em;
+        }
+        .tier-price {
+            font-size: 1.8em;
+            color: #27ae60;
+            margin-top: 8px;
+        }
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .contact-section h2 {
+            color: #2ecc71;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .contact-item {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .venmo-btn {
+            display: inline-block;
+            background: #3d95ce;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .venmo-btn:hover {
+            background: #2d7ab8;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Cruze Services</h1>
-        <p>Use Venmo for payments: <a class="venmo-link" href="https://venmo.com/Cruze-Klinck">@Cruze-Klinck</a></p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>🏡 Cruze Services</h1>
+            <p>Professional Lawn Mowing & Snow Shoveling</p>
+        </header>
 
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="pricing">
-            <div class="service">
-                <h3>Lawn Mowing</h3>
-                <p>Pricing Tiers:</p>
-                <ul>
-                    <li>Standard (up to 1,000 sqft): $30</li>
-                    <li>Large (up to 2,500 sqft): $50</li>
-                    <li>Extra Large (over 2,500 sqft): $70</li>
-                </ul>
+        <h2 class="section-title">Lawn Mowing Pricing</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h2>Bronze Tier</h2>
+                <div class="tier">
+                    <div class="tier-name">1 Mow Per Month</div>
+                    <div class="tier-price">$50</div>
+                </div>
+                <p>Perfect for basic lawn maintenance</p>
             </div>
-            <div class="service">
-                <h3>Snow Shoveling</h3>
-                <p>Pricing Tiers:</p>
-                <ul>
-                    <li>Driveway (up to 2 cars): $40</li>
-                    <li>Walkway: $20</li>
-                    <li>Full Property: $80</li>
-                </ul>
+            <div class="service-card">
+                <h2>Silver Tier</h2>
+                <div class="tier">
+                    <div class="tier-name">2 Mows Per Month</div>
+                    <div class="tier-price">$90/month</div>
+                </div>
+                <p>Keep your lawn looking fresh year-round</p>
             </div>
         </div>
-    </section>
 
-    <footer class="contact-info">
-        <h2>Contact Us</h2>
-        <p>Email: cruzeklinck@gmail.com</p>
-        <p>Phone: 908-361-5106</p>
-    </footer>
+        <div class="services-grid" style="margin-bottom: 40px;">
+            <div class="service-card">
+                <h2>Gold Tier</h2>
+                <div class="tier">
+                    <div class="tier-name">Premium Service</div>
+                    <div class="tier-price">$320 Total</div>
+                    <p style="margin-top: 10px; color: #666;">May, June, July, August<br>2 mows per month</p>
+                </div>
+                <p>Our best value for summer months</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Snow Shoveling Pricing</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h2>One-Time Service</h2>
+                <div class="tier">
+                    <div class="tier-name">Single Snow Removal</div>
+                    <div class="tier-price">$80</div>
+                </div>
+                <p>Perfect for unexpected snow storms</p>
+            </div>
+            <div class="service-card">
+                <h2>Season Pass</h2>
+                <div class="tier">
+                    <div class="tier-name">Unlimited Snow Removal</div>
+                    <div class="tier-price">$150/season</div>
+                </div>
+                <p>All-season protection, unlimited services</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>📞 Contact Us</h2>
+            <div class="contact-item">
+                <strong>Email:</strong> <a href="mailto:cruzeklinck@gmail.com">cruzeklinck@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> <a href="tel:908-361-5106">908-361-5106</a>
+            </div>
+            <div class="contact-item">
+                <strong>Pay with Venmo:</strong>
+                <br>
+                <a href="https://venmo.com/Cruze-Klinck" class="venmo-btn">Send Payment to @Cruze-Klinck</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Include your address and service description in the Venmo memo</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Cruze Services. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
